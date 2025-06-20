@@ -4,7 +4,7 @@ import React, { useEffect, useState, useRef } from 'react';
 
 const LuxuryHero = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const videoRef = useRef(null); // ✅ JavaScript-compatible ref
+  const videoRef = useRef(null); 
 
   useEffect(() => {
     setIsVisible(true);
@@ -23,7 +23,7 @@ const LuxuryHero = () => {
           muted
           loop
           playsInline
-          className="w-full h-full object-cover brightness-[0.3]" // darker for cinematic
+          className="w-full h-full object-cover brightness-[0.3]" 
           poster="/images/hero-poster.jpg"
         >
           <source src="/videos/hero.mp4" type="video/mp4" />

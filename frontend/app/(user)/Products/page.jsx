@@ -24,7 +24,6 @@ const ProductsPage = () => {
     }, []);
     const [filteredProducts, setFilteredProducts] = useState(mockProducts);
     const [selectedProduct, setSelectedProduct] = useState(null);
-  // Extract all unique filter options from products
   const allShapes = [...new Set(mockProducts.map(p => p.shape))];
 
   const allCollections = [...new Set(mockProducts.map(p => p.collection))];
@@ -62,7 +61,6 @@ const ProductsPage = () => {
              maximumFractionDigits: 0
             }).format(price);};
 
-  // Calculate product counts for each filter option
   const getFilterCounts = () => {
     const shapeCounts = {};
     const collectionCounts = {};
@@ -148,7 +146,7 @@ const ProductsPage = () => {
     setFilteredProducts(result);
   }, [filters, products,allShapes]);
   const searchParams = useSearchParams();
-  const categoryFromURL = searchParams.get('category'); // e.g., "Ring"
+  const categoryFromURL = searchParams.get('category');
 
   useEffect(() => {
   if (categoryFromURL) {
@@ -202,7 +200,7 @@ const ProductsPage = () => {
   return (
     <section className="min-h-screen bg-black text-center text-[#333] px-4 sm:px-6 lg:px-12 py-8">
       {/* Hero Section */}
-      <div className="bg-gradient-to-r from-[#1a1a1a] to-[#333] text-white/90 rounded-xl p-8 mb-8 shadow-lg mt-8 text-center">
+      <div className="bg-gradient-to-r from-[#1a1a1a] to-[#333] text-white/90 rounded-xl p-8 mb-8 shadow-lg mt-24 sm:mt-12  text-center">
         <h1 className="text-3xl sm:text-4xl font-bold mb-3 font-serif text-gradient-gold">Exquisite Diamond Collection</h1>
         <p className="text-white/90 ">
           Discover timeless elegance with our hand-selected premium diamonds
@@ -562,7 +560,7 @@ const ProductsPage = () => {
         {/* Products Grid */}
         <div className="flex-1 ">
           {filteredProducts.length > 0 ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 ">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 justify-items-center ">
 
               {filteredProducts.map((product) => (
                 <div key={product.id}  onClick={() => setSelectedProduct(product)} className=" relative max-w-xs bg-gradient-to-b from-white/5 to-white/10 backdrop-blur-md border border-white/10 rounded-3xl overflow-hidden shadow-xl transition-all duration-500 group cursor-pointer hover:shadow-[0_0_20px_rgba(212,175,55,0.6)]">

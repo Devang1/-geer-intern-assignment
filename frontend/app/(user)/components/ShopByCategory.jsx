@@ -53,7 +53,6 @@ const ShopByCategory = () => {
               </h3>
             </div>
 
-            {/* Hover Overlay with Description */}
             <div className="absolute inset-0 bg-black/70 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col items-center justify-center p-4">
                 <h3 className="text-lg font-semibold text-transparent bg-clip-text bg-gradient-to-r from-[#d4af37] to-[#fff8dc]">
                   {cat.name}

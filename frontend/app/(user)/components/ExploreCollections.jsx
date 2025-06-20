@@ -34,19 +34,14 @@ const ExploreCollections = () => {
             key={idx}
             className="flex flex-col items-center group transition-transform duration-500 ease-in-out hover:scale-[1.07]"
           >
-            {/* Circular Image with Border & Shadow */}
             <div className="w-56 h-56 md:w-60 md:h-60 rounded-full overflow-hidden relative shadow-xl border-4 border-white/10 group-hover:shadow-gold transition-all duration-500">
               <img
                 src={item.image}
                 alt={item.title}
                 className="w-full h-full object-cover object-center rounded-full transition-transform duration-700 group-hover:scale-105"
               />
-
-              {/* Gold shimmer ring on hover */}
               <div className="absolute inset-0 rounded-full border-2 border-transparent group-hover:border-[#FFD700]/40 transition duration-500" />
             </div>
-
-            {/* Title with shimmer effect */}
             <p className="mt-6 text-center font-playfair text-sm md:text-base tracking-wider text-gradient-silver-dark animate-fade-in-up">
               {item.title}
             </p>
